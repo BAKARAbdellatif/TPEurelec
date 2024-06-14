@@ -5,7 +5,7 @@ include_once "helper.php";
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="./jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./jquery-3.7.1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,12 +22,17 @@ include_once "helper.php";
 <script>
     $(document).ready(function() {
 
-        const interval = setInterval(updateCounter, 3000);
+        const interval = setInterval(test, 3000);
         page = 0
 
+        function test() {
+            console.log(page++)
+            if (page == 10) {
+                clearInterval(interval)
+            }
+        }
+
         function updateCounter() {
-            page++
-            console.log(page)
             $.ajax({
                 url: "getProducts.php",
                 data: {

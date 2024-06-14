@@ -5,7 +5,7 @@ function getConnexion()
 {
     // Paramètres de connexion
     $host = '127.0.0.1'; // Adresse de l'hôte (localhost ou adresse IP)
-    $db = 'ajax'; // Nom de la base de données
+    $db = 'plin01'; // Nom de la base de données
     $user = 'root'; // Nom d'utilisateur
     $pass = ''; // Mot de passe
     $charset = 'utf8mb4'; // Jeu de caractères
